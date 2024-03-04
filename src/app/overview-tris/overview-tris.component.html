@@ -1,0 +1,40 @@
+<div class="main-container">
+  <h1 class="mat-display-2" style="font-weight: 800; text-align: center; margin: 15px 0; color:white;">Tic-Tac-Toe</h1>
+
+  <div class="field  d-flex justify-content-center">
+    <p class="mat-display-1" style="color: #fff;">Start the game!</p>
+  </div>
+
+  <div *ngIf="!this.win && !this.draw" class="field d-flex justify-content-center">
+    <div class="startfield">
+      <p class="description">{{this.player}} Turn</p>
+    </div>
+  </div>
+  <div *ngIf="this.win" class="field d-flex justify-content-center">
+    <div class="startfield">
+      <p class="players">{{this.winner}}</p>
+      <p class="description">Winner!</p>
+    </div>
+  </div>
+
+  <div *ngIf="this.draw && !this.win" class="field d-flex justify-content-center">
+    <div class="startfield">
+      <p class="players">X O</p>
+      <p class="description">Draw!</p>
+    </div>
+  </div>
+
+  <div *ngIf="!this.win && !this.draw" class="startboard">
+    <div class="startfield container-fluid">
+      <div class="row">
+        <div *ngFor="let b of fields" (click)="clickSubfield(b)" class="subfield col-4">
+          <div class="players">{{getData(b).toString()}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="field d-flex justify-content-center" style="width: 100%; margin-top: 20px;">
+    <button (click)="startGame()" color="primary" class="start-game">Start Now.</button>
+  </div>
+</div>

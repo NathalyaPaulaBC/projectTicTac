@@ -1,0 +1,35 @@
+.main-container {
+  .startboard {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .startfield {
+      max-width: 300px;
+
+      .subfield {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: 100px;
+        width: 100px;
+        border: 1px solid #000;
+      }
+    }
+  }
+
+  .players {
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+
+  }
+}
